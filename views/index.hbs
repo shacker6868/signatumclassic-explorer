@@ -1,0 +1,49 @@
+<div class="container-fluid">    
+  <div class="row content">
+    
+    <div class="container"> 
+      
+      <div class="search-div" style="display: inline-block;width:100%;text-align:center;">
+        <img src="./assets/img/sigc-logo.png" style="max-width: 200px;"></img>
+        <h1>Search Blockchain</h1>
+        
+        <div style="display:inline-block;width:100%;">
+          <input class="search-box" type="text" style="width: 75%;height:40px;float:left;"></input>
+          <button class="search btn btn-primary" style="height:40px;float:left;">Search</button> 
+        </div>
+      </div>
+
+      <div style="display:inline-block;width:100%;">
+        <iframe class="127.0.0.1:8000" style="width:100%;height:100%;overflow:hidden;"></iframe>
+      </div>
+
+      <hr>
+      <br /> 
+      <h3>Latest Blocks</h3>
+
+      <table id="recent" class="recent display dt-responsive no-wrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Block #</th>
+                <th>Block Hash</th>
+                <th>Time</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each stuff}}
+        <tr>
+          <td>{{this.height}}</td>
+          <td>{{this.hash}}</td>
+          <td class="time">{{this.time}}</td>
+          <td>
+            <a href="./block?blockHash={{this.hash}}">View</a>
+          </td>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+</div>

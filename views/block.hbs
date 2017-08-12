@@ -1,0 +1,43 @@
+<div class="container-fluid text-center">    
+  <div class="row content">
+    
+    <div class="container"> 
+
+      <div class="search-div" style="display: inline-block;width:100%;text-align:center;">
+        <img src="./assets/img/sigc-logo.png" style="max-width: 200px;"></img>
+        <h1>Search Blockchain</h1>
+        
+        <div style="display:inline-block;width:100%;">
+          <input class="search-box" type="text" style="width: 75%;height:40px;float:left;"></input>
+          <button class="search btn btn-primary" style="height:40px;float:left;">Search</button> 
+        </div>
+      </div>
+
+      <hr>
+      <br /> 
+      <h3>Block {{stuff.height}}</h3>
+
+      <table style="width:100%;">
+          <thead>
+            <tr>
+                <th>Block</th>
+                <th>Hash</th>
+                <th>Confirmations</th>
+                <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>{{stuff.height}}</td>
+                  <td>{{stuff.hash}}</td>
+                  <td>{{stuff.confirmations}}</td>
+                  <td>{{stuff.time}}</td>
+              </tr>
+          </tbody>
+      </table>
+      <div style="height:25px;text-align:center;margin:15px;">
+        <a href="./block?blockHash={{stuff.previousblockhash}}">Previous Block: {{stuff.previousblockhash}}</a>
+      </div>
+    </div>
+  </div>
+</div>

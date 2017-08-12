@@ -1,0 +1,15 @@
+{
+  "name": "signatum-charts",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Signatum Team Developers",
+  "license": "GPLv3",
+  "dependencies": {
+    "express": "~4.15.2",
+    "express-handlebars" : "^3.0.0",
+    "path" : "^0.12.7",
+    "bitcoin-core": "^1.1.0",
+  }
+}

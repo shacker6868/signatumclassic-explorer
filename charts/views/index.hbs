@@ -1,0 +1,53 @@
+<div id="chart" style="width:100%; height:400px;"></div>
+
+<script>
+    var chart;
+    chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'chart',
+            defaultSeriesType: 'spline',
+            zoomType: 'x'
+        },
+        credits: {
+            enabled: false
+        },
+        rangeSelector : {
+            selected : 100
+        },
+        title: {
+            text: 'Signatum Data'
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
+        },
+        yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
+            title: {
+                text: 'Difficulty',
+                margin: 80
+            }
+        },
+        tooltip: {
+            shared: false,
+            formatter: function() {
+                if (this.series.name == "Difficulty") {
+                    return "Difficulty: " + this.point.y + "<br />Block: " + this.point.block;
+                } else if (this.series.name == "TX Count") {
+                    return "TX Count: " + this.point.y + "<br />Block: " + this.point.block;
+                }
+            }
+        },
+        series: [{
+            name: 'Difficulty',
+            data: [
+                {{data}}
+            ]
+        }, {
+            name: 'TX Count',
+            data: [{{txData}}]
+        }]
+    });
+</script>
